@@ -4,7 +4,7 @@ Divide the lines of a string in a lines object array
 
 [![Coverage Status](https://coveralls.io/repos/github/forresst/divide-lines/badge.svg)](https://coveralls.io/github/forresst/divide-lines)
 [![version](https://img.shields.io/npm/v/divide-lines.svg?style=flat-square)](https://www.npmjs.com/package/divide-lines)
-[![node-version](https://img.shields.io/badge/node-%3E%3D%208.0-orange.svg?style=flat-square)](https://nodejs.org)
+[![node-version](https://img.shields.io/badge/node-%3E%3D%2010.0-orange.svg?style=flat-square)](https://nodejs.org)
 [![downloads](https://img.shields.io/npm/dm/divide-lines.svg?style=flat-square)](http://npm-stat.com/charts.html?package=divide-lines)
 
 [![MIT License](https://img.shields.io/npm/l/divide-lines.svg?style=flat-square)](https://github.com/forresst/divide-lines/blob/master/LICENSE)

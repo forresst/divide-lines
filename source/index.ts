@@ -21,20 +21,20 @@ const createLine = (content: string, lineBreak?: string): Line => {
 	line.originalLine = content + ((lineBreak) ? lineBreak : '');
 
 	if (content !== '') {
-		const matches: IterableIterator<RegExpMatchArray> = content.matchAll(REGEXP_WHITESPACE_START_END);
-
-		for (const match of matches) {
+		let match;
+		let updatedContent = content;
+		while ((match = REGEXP_WHITESPACE_START_END.exec(content)) !== null) {
 			if (match.index === 0) {
 				line.whitespaceStart = match[0];
-				content = content.slice(line.whitespaceStart.length);
+				updatedContent = updatedContent.slice(line.whitespaceStart.length);
 			} else {
 				line.whitespaceEnd = match[0];
-				content = content.slice(0, -line.whitespaceEnd.length);
+				updatedContent = updatedContent.slice(0, -line.whitespaceEnd.length);
 			}
 		}
 
-		if (content !== '') {
-			line.content = content;
+		if (updatedContent !== '') {
+			line.content = updatedContent;
 		}
 	}
 
