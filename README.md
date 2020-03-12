@@ -87,7 +87,7 @@ console.log(divideLines('\n\rHello \r\n\n The\n\nNice World  '));
 
 ### divideLines(input)
 
-Divide the lines of a string in a lines object array Returns a `array`.
+Divide the lines of a string in a lines object Returns a `object`.
 
 #### input
 
@@ -97,9 +97,9 @@ The string to divide.
 
 #### return
 
-Type: `array`
+Type: `object`
 
-The lines object array.
+The lines object.
 
 #### Example
 
