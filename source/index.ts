@@ -47,7 +47,7 @@ const createLine = (content: string, lineBreak?: string): Line => {
 
 const divideLines = (input: string): Lines => {
 	const lines: Line[] = [];
-	const parts: string[] = (input) ? input.split(REGEXP_LINE_BREAK) : [];
+	const parts: string[] = (input === null || input === undefined) ? [] : input.split(REGEXP_LINE_BREAK);
 
 	for (let i = 0; i < parts.length; i += 2) {
 		lines.push(createLine(parts[i], parts[i + 1]));
