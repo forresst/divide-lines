@@ -9,7 +9,7 @@ interface Line {
 }
 
 interface Lines {
-	originalString: string;
+	originalString?: string;
 	lines: Line[];
 }
 
