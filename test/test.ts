@@ -1,6 +1,15 @@
 import test from 'ava';
 import divideLines from '../source';
 
+test('A undefined parameter', t => {
+	const input = undefined;
+	const objectExpected = {
+		originalString: undefined,
+		lines: []
+	};
+	t.deepEqual(divideLines(input), objectExpected);
+});
+
 test('A empty string', t => {
 	const input = '';
 	const objectExpected = {
