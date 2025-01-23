@@ -56,7 +56,7 @@
 	"ava": {
 		"typescript": {
 			"rewritePaths": {
-				"src/": "dist/"
+				"source/": "dist/"
 			},
 			"compile": false
 		}
