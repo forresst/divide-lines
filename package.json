@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"type": "module",
 	"exports": {
-		"default": "./dist/index.js"
+		"types": "./dist/source/index.d.ts",
+		"default": "./dist/source/index.js"
 	},
 	"engines": {
 		"node": ">=20.9.0"
@@ -13,6 +14,7 @@
 	"files": [
 		"dist"
 	],
+	"types": "dist/sources/index.d.ts",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/forresst/divide-lines.git"
@@ -41,22 +43,16 @@
 	"devDependencies": {
 		"@ava/typescript": "^5.0.0",
 		"@sindresorhus/tsconfig": "^7.0.0",
-		"@types/node": "^13.13.52",
 		"ava": "^6.2.0",
 		"del-cli": "^6.0.0",
-		"ts-node": "^10.9.2",
 		"typescript": "^5.7.2",
 		"xo": "^0.60.0"
-	},
-	"xo": {
-		"rules": {
-			"import/no-named-as-default-member": "off"
-		}
 	},
 	"ava": {
 		"typescript": {
 			"rewritePaths": {
-				"source/": "dist/"
+				"source/": "dist/source/",
+				"test/": "dist/test/"
 			},
 			"compile": false
 		}
