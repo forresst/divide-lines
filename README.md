@@ -41,7 +41,7 @@ npm install --save-dev divide-lines
 ### Node.js
 
 ```js
-const divideLines = require('divide-lines');
+import divideLines from 'divide-lines';
 
 console.log(divideLines('\n\rHello \r\n\n The\n\nNice World  '));
 /*	=>
@@ -107,7 +107,7 @@ The lines object.
 
 > ```js
 >
-> const divideLines = require('divide-lines');
+> import divideLines from 'divide-lines';
 >
 > console.log(divideLines(''));
 > //=> { originalString: '', lines: [ { originalLine: '' } ] }

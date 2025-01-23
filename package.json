@@ -1,13 +1,18 @@
 {
 	"name": "divide-lines",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "Divide the lines of a string in a lines object",
 	"license": "MIT",
-	"main": "dist",
+	"type": "module",
+	"exports": {
+		"default": "./dist/index.js"
+	},
+	"engines": {
+		"node": ">=20.9.0"
+	},
 	"files": [
 		"dist"
 	],
-	"types": "dist",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/forresst/divide-lines.git"
@@ -20,11 +25,8 @@
 		"name": "Stéphane Reynaud",
 		"url": "https://github.com/forresst"
 	},
-	"engines": {
-		"node": ">=10"
-	},
 	"scripts": {
-		"test": "xo && nyc ava",
+		"test": "npm run build && xo && ava",
 		"build": "del-cli dist && tsc",
 		"prepublishOnly": "npm run build"
 	},
@@ -36,44 +38,27 @@
 		"split",
 		"array"
 	],
-	"dependencies": {},
 	"devDependencies": {
-		"@sindresorhus/tsconfig": "^0.7.0",
-		"@types/node": "^13.9.0",
-		"@typescript-eslint/eslint-plugin": "^2.23.0",
-		"@typescript-eslint/parser": "^2.23.0",
-		"ava": "^3.5.0",
-		"del-cli": "^3.0.0",
-		"eslint-config-xo-typescript": "^0.26.0",
-		"nyc": "^15.0.0",
-		"ts-node": "^8.6.2",
-		"typescript": "^3.8.3",
-		"xo": "^0.28.0"
-	},
-	"nyc": {
-		"extension": [
-			".ts"
-		],
-		"reporter": [
-			"lcov",
-			"text"
-		]
+		"@ava/typescript": "^5.0.0",
+		"@sindresorhus/tsconfig": "^7.0.0",
+		"@types/node": "^13.13.52",
+		"ava": "^6.2.0",
+		"del-cli": "^6.0.0",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.7.2",
+		"xo": "^0.60.0"
 	},
 	"xo": {
-		"extends": "xo-typescript",
-		"extensions": [
-			"ts"
-		],
-		"parserOptions": {
-			"project": "tsconfig.xo.json"
+		"rules": {
+			"import/no-named-as-default-member": "off"
 		}
 	},
 	"ava": {
-		"extensions": [
-			"ts"
-		],
-		"require": [
-			"ts-node/register"
-		]
+		"typescript": {
+			"rewritePaths": {
+				"src/": "dist/"
+			},
+			"compile": false
+		}
 	}
 }

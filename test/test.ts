@@ -1,11 +1,11 @@
 import test from 'ava';
-import divideLines from '../source';
+import divideLines from '../dist/index.js';
 
 test('A undefined parameter', t => {
 	const input = undefined;
 	const objectExpected = {
 		originalString: undefined,
-		lines: []
+		lines: [],
 	};
 	t.deepEqual(divideLines(input), objectExpected);
 });
@@ -16,9 +16,9 @@ test('A empty string', t => {
 		originalString: '',
 		lines: [
 			{
-				originalLine: ''
-			}
-		]
+				originalLine: '',
+			},
+		],
 	};
 	t.deepEqual(divideLines(input), objectExpected);
 });
@@ -30,9 +30,9 @@ test('Only one character', t => {
 		lines: [
 			{
 				content: 'a',
-				originalLine: 'a'
-			}
-		]
+				originalLine: 'a',
+			},
+		],
 	};
 	t.deepEqual(divideLines(input), objectExpected);
 });
@@ -44,9 +44,9 @@ test('Only one blank', t => {
 		lines: [
 			{
 				whitespaceStart: ' ',
-				originalLine: ' '
-			}
-		]
+				originalLine: ' ',
+			},
+		],
 	};
 	t.deepEqual(divideLines(input), objectExpected);
 });
@@ -58,9 +58,9 @@ test('Only five blanks', t => {
 		lines: [
 			{
 				whitespaceStart: '     ',
-				originalLine: '     '
-			}
-		]
+				originalLine: '     ',
+			},
+		],
 	};
 	t.deepEqual(divideLines(input), objectExpected);
 });
@@ -72,12 +72,12 @@ test('Only one \\n', t => {
 		lines: [
 			{
 				lineBreak: '\n',
-				originalLine: '\n'
+				originalLine: '\n',
 			},
 			{
-				originalLine: ''
-			}
-		]
+				originalLine: '',
+			},
+		],
 	};
 	t.deepEqual(divideLines(input), objectExpected);
 });
@@ -89,12 +89,12 @@ test('Only one \\r\\n', t => {
 		lines: [
 			{
 				lineBreak: '\r\n',
-				originalLine: '\r\n'
+				originalLine: '\r\n',
 			},
 			{
-				originalLine: ''
-			}
-		]
+				originalLine: '',
+			},
+		],
 	};
 	t.deepEqual(divideLines(input), objectExpected);
 });
@@ -106,9 +106,9 @@ test('Only one \\r', t => {
 		lines: [
 			{
 				whitespaceStart: '\r',
-				originalLine: '\r'
-			}
-		]
+				originalLine: '\r',
+			},
+		],
 	};
 	t.deepEqual(divideLines(input), objectExpected);
 });
@@ -121,17 +121,17 @@ test('String with only \\n', t => {
 			{
 				content: 'b',
 				lineBreak: '\n',
-				originalLine: 'b\n'
+				originalLine: 'b\n',
 			},
 			{
 				content: 'c',
 				lineBreak: '\n',
-				originalLine: 'c\n'
+				originalLine: 'c\n',
 			},
 			{
-				originalLine: ''
-			}
-		]
+				originalLine: '',
+			},
+		],
 	};
 	t.deepEqual(divideLines(input), objectExpected);
 });
@@ -143,35 +143,35 @@ test('String with multiple breaklines', t => {
 		lines: [
 			{
 				lineBreak: '\n',
-				originalLine: '\n'
+				originalLine: '\n',
 			},
 			{
 				whitespaceStart: '\r',
 				whitespaceEnd: ' ',
 				content: 'd',
 				lineBreak: '\r\n',
-				originalLine: '\rd \r\n'
+				originalLine: '\rd \r\n',
 			},
 			{
 				lineBreak: '\n',
-				originalLine: '\n'
+				originalLine: '\n',
 			},
 			{
 				whitespaceStart: ' ',
 				content: 'e',
 				lineBreak: '\n',
-				originalLine: ' e\n'
+				originalLine: ' e\n',
 			},
 			{
 				lineBreak: '\n',
-				originalLine: '\n'
+				originalLine: '\n',
 			},
 			{
 				whitespaceEnd: '  ',
 				content: 'f',
-				originalLine: 'f  '
-			}
-		]
+				originalLine: 'f  ',
+			},
+		],
 	};
 	t.deepEqual(divideLines(input), objectExpected);
 });
@@ -186,12 +186,12 @@ test('With multiple whitespace before one char', t => {
 				whitespaceEnd: ' ',
 				content: 'x',
 				lineBreak: '\n',
-				originalLine: '          x \n'
+				originalLine: '          x \n',
 			},
 			{
-				originalLine: ''
-			}
-		]
+				originalLine: '',
+			},
+		],
 	};
 	t.deepEqual(divideLines(input), objectExpected);
 });
@@ -206,12 +206,12 @@ test('With multiple whitespace after one char', t => {
 				whitespaceEnd: '          ',
 				content: 'y',
 				lineBreak: '\n',
-				originalLine: ' y          \n'
+				originalLine: ' y          \n',
 			},
 			{
-				originalLine: ''
-			}
-		]
+				originalLine: '',
+			},
+		],
 	};
 	t.deepEqual(divideLines(input), objectExpected);
 });
@@ -231,43 +231,43 @@ My text.
 			{
 				content: '## Title',
 				lineBreak: '\n',
-				originalLine: '## Title\n'
+				originalLine: '## Title\n',
 			},
 			{
 				lineBreak: '\n',
-				originalLine: '\n'
+				originalLine: '\n',
 			},
 			{
 				content: 'My text.',
 				lineBreak: '\n',
-				originalLine: 'My text.\n'
+				originalLine: 'My text.\n',
 			},
 			{
 				whitespaceStart: '\t',
 				content: 'foo',
 				lineBreak: '\n',
-				originalLine: '\tfoo\n'
+				originalLine: '\tfoo\n',
 			},
 			{
 				whitespaceStart: '\t',
 				content: 'bar',
 				lineBreak: '\n',
-				originalLine: '\tbar\n'
+				originalLine: '\tbar\n',
 			},
 			{
 				lineBreak: '\n',
-				originalLine: '\n'
+				originalLine: '\n',
 			},
 			{
 				whitespaceStart: '\t',
 				content: '> **Note**: Hello',
 				lineBreak: '\n',
-				originalLine: '\t> **Note**: Hello\n'
+				originalLine: '\t> **Note**: Hello\n',
 			},
 			{
-				originalLine: ''
-			}
-		]
+				originalLine: '',
+			},
+		],
 	};
 	t.deepEqual(divideLines(input), objectExpected);
 });
