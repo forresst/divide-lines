@@ -5,16 +5,16 @@
 	"license": "MIT",
 	"type": "module",
 	"exports": {
-		"types": "./dist/source/index.d.ts",
-		"default": "./dist/source/index.js"
+		"types": "./dist/index.d.ts",
+		"default": "./dist/index.js"
 	},
 	"engines": {
-		"node": ">=20.9.0"
+		"node": ">=18"
 	},
 	"files": [
 		"dist"
 	],
-	"types": "dist/sources/index.d.ts",
+	"types": "dist/index.d.ts",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/forresst/divide-lines.git"
@@ -51,8 +51,7 @@
 	"ava": {
 		"typescript": {
 			"rewritePaths": {
-				"source/": "dist/source/",
-				"test/": "dist/test/"
+				"source/": "dist/"
 			},
 			"compile": false
 		}

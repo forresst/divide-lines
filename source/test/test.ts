@@ -1,5 +1,5 @@
 import test from 'ava';
-import divideLines from '../source/index.js';
+import divideLines from '../index.js';
 
 test('A undefined parameter', t => {
 	const input = undefined;
