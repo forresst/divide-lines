@@ -1,6 +1,6 @@
 {
 	"name": "divide-lines",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Divide the lines of a string in a lines object",
 	"license": "MIT",
 	"type": "module",

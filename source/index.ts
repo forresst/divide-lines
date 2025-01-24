@@ -50,7 +50,7 @@ const divideLines = (input?: string): Lines => {
 	const parts: string[] = (input === null || input === undefined) ? [] : input.split(regexpLineBreak);
 
 	for (let i = 0; i < parts.length; i += 2) {
-		lines.push(createLine(parts[i] ?? '', parts[i + 1]));
+		lines.push(createLine(parts[i]!, parts[i + 1]));
 	}
 
 	return {
