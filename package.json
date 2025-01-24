@@ -1,6 +1,6 @@
 {
 	"name": "divide-lines",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Divide the lines of a string in a lines object",
 	"license": "MIT",
 	"type": "module",
@@ -12,7 +12,7 @@
 		"node": ">=18"
 	},
 	"files": [
-		"dist"
+		"dist/*"
 	],
 	"types": "dist/index.d.ts",
 	"repository": {
